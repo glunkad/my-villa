@@ -1,6 +1,6 @@
 import { Carousel } from "@material-tailwind/react";
 
-export const Vcarousel = () => {
+export const MyCarousel = () => {
     return (
         <Carousel transition={{ duration: 1 }} className="rounded-none">
             <img
