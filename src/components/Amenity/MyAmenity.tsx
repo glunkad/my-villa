@@ -1,21 +1,19 @@
 import React from 'react';
 import { ListItem, ListItemPrefix, Typography } from '@material-tailwind/react';
-import { IoHome } from 'react-icons/io5';
-import { BsCarFront, BsWifi } from 'react-icons/bs';
+import { MdOutlineHouse , MdHeight , MdPool, MdOutlineLocalParking , MdPets, MdBalcony, MdWifi, MdVisibility, MdAcUnit, MdKitchen } from 'react-icons/md';
 
 export const MyAmenity = () => {
     const amenities = [
-        { icon: <IoHome className="h-6 w-6 text-black-500" />, name: 'Entire House' },
-        { icon: <BsWifi className="h-6 w-6 text-black-500" />, name: 'Free Wi-Fi' },
-        { icon: <BsCarFront className="h-6 w-6 text-black-500" />, name: 'Free Parking' },
-        { icon: <IoHome className="h-6 w-6 text-black-500" />, name: 'Garden View' },
-        { icon: <BsWifi className="h-6 w-6 text-black-500" />, name: 'Swimming Pool' },
-        { icon: <BsCarFront className="h-6 w-6 text-black-500" />, name: 'Gym Access' },
-        { icon: <IoHome className="h-6 w-6 text-black-500" />, name: 'BBQ Area' },
-        { icon: <BsWifi className="h-6 w-6 text-black-500" />, name: 'Pet Friendly' },
-        { icon: <BsCarFront className="h-6 w-6 text-black-500" />, name: 'Air Conditioning' },
-        { icon: <IoHome className="h-6 w-6 text-black-500" />, name: 'Fireplace' },
-        // Ensure there are exactly 10 items for 2 rows of 5 columns each
+        { icon: <MdOutlineHouse  className="h-6 w-6 text-black-500" />, name: 'Entire House' },
+        { icon: <MdHeight  className="h-6 w-6 text-black-500" />, name: '10764 ft^2 size' }, // Used MdDimensions for dimensions
+        { icon: <MdPool className="h-6 w-6 text-black-500" />, name: 'Swimming Pool' }, // Used MdPool for pool
+        { icon: <MdOutlineLocalParking  className="h-6 w-6 text-black-500" />, name: 'Free on-site parking' },
+        { icon: <MdPets className="h-6 w-6 text-black-500" />, name: 'Pets allowed' },
+        { icon: <MdBalcony className="h-6 w-6 text-black-500" />, name: 'Balcony' },
+        { icon: <MdWifi className="h-6 w-6 text-black-500" />, name: 'Free Wifi' },
+        { icon: <MdVisibility className="h-6 w-6 text-black-500" />, name: 'View' },
+        { icon: <MdAcUnit className="h-6 w-6 text-black-500" />, name: 'Air Conditioning' }, // Used MdAcUnit for air conditioning
+        { icon: <MdKitchen className="h-6 w-6 text-black-500" />, name: 'Kitchen' },
     ];
 
     return (
@@ -23,15 +21,14 @@ export const MyAmenity = () => {
             {amenities.map((amenity, index) => (
                 <ListItem
                     key={index}
-                    className="flex flex-col items-center space-y-2 bg-gray-50 p-4 rounded-lg shadow-sm hover:bg-blue-50 transition duration-300 ease-in-out"
+                    className="flex items-center space-x-2 bg-gray-50 p-4 rounded-lg shadow-sm hover:bg-blue-50 transition duration-300 ease-in-out"
                 >
                     <ListItemPrefix>
                         {amenity.icon}
                     </ListItemPrefix>
-                    <Typography className="font-semibold text-gray-700 text-center">{amenity.name}</Typography>
+                    <Typography className="font-semibold text-gray-700">{amenity.name}</Typography>
                 </ListItem>
             ))}
         </div>
     );
 };
-

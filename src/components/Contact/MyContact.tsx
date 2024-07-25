@@ -1,7 +1,15 @@
 import React from "react";
 import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
-export const MyContact = ()=> {
+const position = [18.75275, 73.420139];
+
+export const MyContact = () => {
+    const handleMarkerClick = () => {
+        const googleMapsURL = `https://www.google.com/maps?q=${position[0]},${position[1]}`;
+        window.open(googleMapsURL, "_blank");
+    };
     return (
         <section className="px-8 py-8 lg:py-16">
             <div className="container mx-auto text-center">
@@ -20,20 +28,26 @@ export const MyContact = ()=> {
                     We&apos;re Here to Help
                 </Typography>
                 <Typography className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
-                    Whether it&apos;s a question about our services, a request for
-                    technical assistance, or suggestions for improvement, our team is
-                    eager to hear from you.
+                    Whether it&apos;s a question about our services, a request for technical
+                    assistance, or suggestions for improvement, our team is eager to hear
+                    from you.
                 </Typography>
                 <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
-                    <img
-                        src="/image/map.svg"
-                        alt="map"
-                        className="w-full h-full lg:max-h-[510px]"
-                    />
-                    <form
-                        action="#"
-                        className="flex flex-col gap-4 lg:max-w-sm"
+                    <MapContainer
+                        center={position}
+                        zoom={12}
+                        scrollWheelZoom={false}
+                        style={{ height: "510px", width: "100%" }}
                     >
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        />
+                        <Marker position={position} eventHandlers={{click: handleMarkerClick}}>
+                            <Popup>Our Location</Popup>
+                        </Marker>
+                    </MapContainer>
+                    <form action="#" className="flex flex-col gap-4 lg:max-w-sm">
                         <Typography
                             variant="small"
                             className="text-left !font-semibold !text-gray-600"
@@ -142,5 +156,5 @@ export const MyContact = ()=> {
             </div>
         </section>
     );
-}
+};
 
