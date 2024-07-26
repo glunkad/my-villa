@@ -4,7 +4,6 @@ import {
     MyContact, MyFaq,
     MyFooter,
     MyGallery,
-    MyHouseRules,
     MyNavbar,
     MySurrounding
 } from "./components";
