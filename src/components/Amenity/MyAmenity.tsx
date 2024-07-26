@@ -1,4 +1,3 @@
-import React from 'react';
 import { ListItem, ListItemPrefix, Typography } from '@material-tailwind/react';
 import { MdOutlineHouse , MdHeight , MdPool, MdOutlineLocalParking , MdPets, MdBalcony, MdWifi, MdVisibility, MdAcUnit, MdKitchen } from 'react-icons/md';
 

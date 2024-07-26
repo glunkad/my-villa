@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -34,16 +33,16 @@ export const MyContact = () => {
                 </Typography>
                 <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
                     <MapContainer
-                        center={position}
+                        className="map"
+                        center={[18.75275, 73.420139]}
                         zoom={12}
                         scrollWheelZoom={false}
                         style={{ height: "510px", width: "100%" }}
                     >
                         <TileLayer
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                         />
-                        <Marker position={position} eventHandlers={{click: handleMarkerClick}}>
+                        <Marker position={[18.75275, 73.420139]} eventHandlers={{click: handleMarkerClick}}>
                             <Popup>Our Location</Popup>
                         </Marker>
                     </MapContainer>
@@ -82,6 +81,7 @@ export const MyContact = () => {
                                     labelProps={{
                                         className: "hidden",
                                     }}
+                                    crossOrigin="anonymous"
                                 />
                             </div>
                             <div>
@@ -103,6 +103,7 @@ export const MyContact = () => {
                                     labelProps={{
                                         className: "hidden",
                                     }}
+                                    crossOrigin="anonymous"
                                 />
                             </div>
                         </div>
@@ -125,6 +126,7 @@ export const MyContact = () => {
                                 labelProps={{
                                     className: "hidden",
                                 }}
+                                crossOrigin="anonymous"
                             />
                         </div>
                         <div>

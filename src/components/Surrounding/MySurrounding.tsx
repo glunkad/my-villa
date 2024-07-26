@@ -1,6 +1,5 @@
-import React from 'react';
 import { FaMapMarkerAlt, FaUtensils, FaTrain, FaLeaf, FaPlane } from 'react-icons/fa';
-import { ListItem, ListItemPrefix, Typography } from '@material-tailwind/react';
+import {  ListItemPrefix, Typography } from '@material-tailwind/react';
 
 export const MySurrounding = () => {
     const surroundings = [
