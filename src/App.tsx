@@ -1,4 +1,13 @@
-import {MyAmenity, MyCarousel, MyContact, MyGallery, MyNavbar, MySurrounding} from "./components";
+import {
+    MyAmenity,
+    MyCarousel,
+    MyContact, MyFaq,
+    MyFooter,
+    MyGallery,
+    MyHouseRules,
+    MyNavbar,
+    MySurrounding
+} from "./components";
 
 
 export const App = () => {
@@ -9,16 +18,17 @@ export const App = () => {
                     <MyGallery />
                     <MyAmenity />
                     <MySurrounding />
+                    <MyFaq/>
                     <MyContact />
+                    <MyFooter />
                     // description
-                    // surrounding
                     // facilities
                     // house rules
+
                     // faq
-                    // map and contact form
                     // back to top cta
-                    // footer (address, contact no)
-                    // @Copyright
+
+
             </>
         )
 }
